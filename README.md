@@ -17,7 +17,7 @@ _{This is a detailed description of your application. Give as much detail as nee
 ## Setup/Installation Requirements
 
 * _clone this repository using_  
-`git clone https://github.com/CyndaZ42/Template-Repo.git`  
+`git clone https://github.com/DonovanWeber/PowerPlant.git`  
 * _run_  
 `npm install`  
 * _then run_  
