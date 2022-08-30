@@ -62,7 +62,15 @@ const drown = changeState("water")(3);
 const shineLight = changeState("light")(1);
 const shineStar = changeState("light")(5);
 
-
+const outsideImpact = (prop) => {
+  return (value) => {
+    return (state) => ({
+      ...state, 
+      [prop]: (state[prop] || 0) - value
+    });
+  };
+};
+const heatWave = outsideImpact("water")(2);
 
 
 //Document Ready
@@ -97,6 +105,10 @@ $(document).ready(function(){
     $('#soil-value1').text(`Soil: ${newState.soil}`);
   });
   $('#water1').click(function() {
+    const waterValue = $('#water1').val();
+    if(waterValue >= 10) {
+      stateControl1(heatWave);
+    }
     const newState = stateControl1(drown);
     $('#water-value1').text(`Water: ${newState.water}`);
   });
