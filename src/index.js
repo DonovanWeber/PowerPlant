@@ -4,6 +4,9 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
+const clonedeep = require('lodash/clonedeep');
+
+const objectCopy = clonedeep(originalObject);
 //Functions
 // const storeState = () => {
 //   let currentState = {};
@@ -78,13 +81,13 @@ $(document).ready(function(){
   $('#show-state').click(function() {
     const currentState = stateControl();
     $('#soil-value').text(`Soil: ${currentState.soil}`);
-    $('#water-value').text(`Water ${currentState.water}`);
+    $('#water-value').text(`Water: ${currentState.water}`);
     $('#light-value').text(`Light: ${currentState.light}`);
   });  
   $('#show-state1').click(function() {
     const currentState = stateControl1();
     $('#soil-value1').text(`Soil: ${currentState.soil}`);
-    $('#water-value1').text(`Water ${currentState.water}`);
+    $('#water-value1').text(`Water: ${currentState.water}`);
     $('#light-value1').text(`Light: ${currentState.light}`);
   });
   $('#feed').click(function() {
